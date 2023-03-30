@@ -1,71 +1,66 @@
-const languageSwitcherLinks = document.querySelectorAll('.header__language-switcher-link');
+const langArr = {
+  description: {
+    en: 'Hello, my name is Petukhov Sergey and I am a novice frontend developer with experience in HTML, CSS and some JavaScript. Check out my portfolio below.',
+    ru: 'Здравствуйте, меня зовут Петухов Сергей и я начинающий фронтенд-разработчик с опытом работы в HTML, CSS и немного JavaScript. Ознакомьтесь с моим портфолио ниже.',
+    cz: 'Dobrý den, jmenuji se Petukhov Sergey a jsem začínající frontendový vývojář se zkušenostmi v HTML, CSS a trochu v JavaScriptu. Podívejte se na mé portfolio níže.',
+  },
 
-languageSwitcherLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
+  heading: {
+    en: 'Frontend Developer',
+    ru: 'Верстальщик сайтов',
+    cz: 'Frontendový vývojář',
+  },
 
-    // Remove active class from all links
-    languageSwitcherLinks.forEach(link => link.classList.remove('active'));
+  portfolio: {
+    en: 'My Portfolio',
+    ru: 'Мои работы',
+    cz: 'Mé portfolio',
+  }, 
 
-    // Add active class to the clicked link
-    const clickedLink = e.target;
-    clickedLink.classList.add('active');
+  link: {
+    en: 'View project',
+    ru: 'Посмотреть работу',
+    cz: 'Zobrazení projektu',
+  },
+  link2: {
+    en: 'View project',
+    ru: 'Посмотреть работу',
+    cz: 'Zobrazení projektu',
+  },
+  link3: {
+    en: 'View project',
+    ru: 'Посмотреть работу',
+    cz: 'Zobrazení projektu',
+  },
+  
+  watch: {
+    en: 'My first made-up landing page with simple adaptive',
+    ru: 'Мой первый сверстанный лендинг с простым адаптивом',
+    cz: 'Moje první "lending" stránka s jednoduchým přizpůsobením',
+  }, 
 
-    // Get the language from the data-lang attribute of the clicked link
-    const language = clickedLink.getAttribute('data-lang');
+  plant: {
+    en: 'A more serious website lending with a lot of elements',
+    ru: 'Более серьезный лендинг сайт с большим количеством элементов',
+    cz: 'Serióznější "lending" webova stránka  s mnoha prvky',
+  },
 
-    // Call a function to update the page language
-    updateLanguage(language);
-  });
-});
+  shop: {
+    en: 'Even more interesting work with the adaptive for most devices, on small screens, the left menu becomes drop down',
+    ru: 'Еще более интересная работа с адаптивом под большенство устройств, на малых экранах левое меню становиться выпадающим',
+    cz: 'Ještě zajímavější je práce s adaptivními pro většinu zařízení. Na malých obrazovkách se levé menu změní na rozbalovací.',
+  },
+};
 
-function updateLanguage(language) {
-    const langData = {
-      en: {
-        heading: 'Hi, I\'m Frontend Developer',
-        description: 'I create modern and responsive web applications using HTML, CSS, JavaScript and other web technologies.',
-        portfolioHeading: 'My portfolio',
-        project1Heading: 'Project 1',
-        project1Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget gravida nulla, sit amet pharetra est. Ut non metus in massa consectetur dictum.',
-        project2Heading: 'Project 2',
-        project2Description: 'Nulla eu tellus risus. Duis accumsan convallis nibh, nec sagittis sapien bibendum vel. Suspendisse potenti. Proin suscipit libero quis eleifend convallis.',
-        project3Heading: 'Project 3',
-        project3Description: 'Pellentesque rutrum, nisl sed sagittis pellentesque, lacus nulla molestie dui, in egestas turpis lacus nec libero. Morbi rutrum ligula eget enim congue, ut vulputate neque posuere.',
-        viewProject: 'View project'
-      },
-      cs: {
-        heading: 'Ahoj, jsem Frontend Developer',
-        description: 'Tvorím moderní a responzivní webové aplikace pomocí HTML, CSS, JavaScriptu a dalších webových technologií.',
-        portfolioHeading: 'Můj portfoli',
-        project1Heading: 'Projekt 1',
-        project1Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget gravida nulla, sit amet pharetra est. Ut non metus in massa consectetur dictum.',
-        project2Heading: 'Projekt 2',
-        project2Description: 'Nulla eu tellus risus. Duis accumsan convallis nibh, nec sagittis sapien bibendum vel. Suspendisse potenti. Proin suscipit libero quis eleifend convallis.',
-        project3Heading: 'Projekt 3',
-        project3Description: 'Pellentesque rutrum, nisl sed sagittis pellentesque, lacus nulla molestie dui, in egestas turpis lacus nec libero. Morbi rutrum ligula eget enim congue, ut vulputate neque posuere.',
-        viewProject: 'Zobrazit projekt'
-      },
-      ru: {
-        heading: 'Привет, я Frontend Developer',
-        description: 'Я создаю современные и адаптивные веб-приложения с использованием HTML, CSS, JavaScript и других веб-технологий.',
-        portfolioHeading: 'Моё портфолио',
-        project1Heading: 'Проект 1',
-        project1Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget gravida nulla, sit amet pharetra est. Ut non metus in massa consectetur dictum.',
-        project2Heading: 'Проект 2',
-        project2Description: 'Nulla eu tellus risus. Duis accumsan convallis nibh, nec sagittis sapien bibendum vel. Suspendisse potenti. Proin suscipit libero quis eleifend convallis.',
-        project3Heading: 'Проект 3',
-        project3Description: 'Pellentesque rutrum, nisl sed sagittis pellentesque, lacus nulla molestie dui, in egestas turpis lacus nec libero. Morbi rutrum ligula eget enim congue, ut vulputate neque posuere.',
-        viewProject: 'Посмотреть проект'
-      }      
+document
+  .querySelectorAll('.lang button')
+  .forEach((b) => b.addEventListener('click', setLang));
+
+function setLang() {
+  for (let key in langArr) {
+    let elem = document.querySelector('#lng-' + key);
+    if (elem) {
+      elem.innerHTML = langArr[key][this.value];
+    }
   }
 }
-const i18nElements = document.querySelectorAll('[data-i18n]');
-
-// Update the text content of each element based on the current language
-i18nElements.forEach(element => {
-const key = element.dataset.i18n;
-element.textContent = langData[lang][key];
-});
-
-// Update the language selection button text
-document.getElementById('lang-select-btn').textContent = lang.toUpperCase();
