@@ -7,40 +7,40 @@
 </head>
 <body>
   <header class="header">
-    <button class="header__language-switcher" onclick="switchLanguage('en')">English</button>
-    <button class="header__language-switcher" onclick="switchLanguage('cz')">čeština</button>
-    <button class="header__language-switcher" onclick="switchLanguage('ru')">Русский</button>
-
+    <div class="lang df">
+      <button value="en" class="active" id="lang-en">EN</button>
+      <button value="ru" id="lang-ru">RU</button>
+      <button value="cz" id="lang-cz">CZ</button>
+    </div>  
   </header>
-
   <main class="main">
     <section class="intro">
-      <h1 class="intro__heading " id="heading">Frontend Developer</h1>
-      <p class="intro__description" id="description">Hello, I'm a frontend developer with experience in HTML, CSS, and JavaScript. Check out my portfolio below.</p>
+      <h1 class="intro__heading" id="lng-heading">Frontend Developer</h1>
+      <p class="intro__description" id="lng-description">Hello, my name is Petukhov Sergey and I am a novice frontend developer with experience in HTML, CSS and some JavaScript. Check out my portfolio below.</p>
     </section>
 
     <section class="portfolio">
-      <h2 class="portfolio__heading" id="portfolioHeading">My Portfolio</h2>
+      <h2 class="portfolio__heading" id="lng-portfolio">My Portfolio</h2>
 
       <div class="portfolio__item">
         <img src="img/1.png" alt="Project 1" class="portfolio__item-image">
-        <h3 class="portfolio__item-heading">Project 1</h3>
-        <p class="portfolio__item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae diam eu tortor blandit consectetur.</p>
-        <a href="https://mrspacks.github.io/The_Watch/" class="portfolio__item-link">View project</a>
+        <h3 class="portfolio__item-heading">Watch landing</h3>
+        <p class="portfolio__item-description" id="lng-watch">My first made-up landing page with simple adaptive</p>
+        <a href="https://mrspacks.github.io/The_Watch/" class="portfolio__item-link" id="lng-link">View project</a>
       </div>
 
       <div class="portfolio__item">
         <img src="img/2.png" alt="Project 2" class="portfolio__item-image">
-        <h3 class="portfolio__item-heading">Project 2</h3>
-        <p class="portfolio__item-description">Suspendisse potenti. Fusce non enim a magna varius efficitur eget nec quam.</p>
-        <a href="https://mrspacks.github.io/Plant_landing/" class="portfolio__item-link">View project</a>
+        <h3 class="portfolio__item-heading">Plant landing</h3>
+        <p class="portfolio__item-description" id="lng-plant">A more serious website lending with a lot of elements</p>
+        <a href="https://mrspacks.github.io/Plant_landing/" class="portfolio__item-link" id="lng-link2">View project</a>
       </div>
 
       <div class="portfolio__item">
         <img src="img/3.png" alt="Project 3" class="portfolio__item-image">
-        <h3 class="portfolio__item-heading">Project 3</h3>
-        <p class="portfolio__item-description">Vestibulum bibendum nulla quis nisl euismod, id vestibulum ipsum pretium.</p>
-        <a href="https://mrspacks.github.io/Wigs/" class="portfolio__item-link">View project</a>
+        <h3 class="portfolio__item-heading">Wigs shop</h3>
+        <p class="portfolio__item-description" id="lng-shop">Even more interesting work with the adaptive for most devices, on small screens, the left menu becomes drop down</p>
+        <a href="https://mrspacks.github.io/Wigs/" class="portfolio__item-link" id="lng-link3">View project</a>
       </div>
     </section>
   </main>
