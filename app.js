@@ -1,27 +1,5 @@
-const languageSwitcherLinks = document.querySelectorAll('.header__language-switcher-link');
-
-languageSwitcherLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Remove active class from all links
-    languageSwitcherLinks.forEach(link => link.classList.remove('active'));
-
-    // Add active class to the clicked link
-    const clickedLink = e.target;
-    clickedLink.classList.add('active');
-
-    // Get the language from the data-lang attribute of the clicked link
-    const language = clickedLink.getAttribute('data-lang');
-
-    // Call a function to update the page language
-    updateLanguage(language);
-  });
-});
-
-function updateLanguage(language) {
-    const langData = {
-      en: {
+const translations = {
+  en: {
         heading: 'Hi, I\'m Frontend Developer',
         description: 'I create modern and responsive web applications using HTML, CSS, JavaScript and other web technologies.',
         portfolioHeading: 'My portfolio',
@@ -32,8 +10,8 @@ function updateLanguage(language) {
         project3Heading: 'Project 3',
         project3Description: 'Pellentesque rutrum, nisl sed sagittis pellentesque, lacus nulla molestie dui, in egestas turpis lacus nec libero. Morbi rutrum ligula eget enim congue, ut vulputate neque posuere.',
         viewProject: 'View project'
-      },
-      cs: {
+  },
+  cs: {
         heading: 'Ahoj, jsem Frontend Developer',
         description: 'Tvorím moderní a responzivní webové aplikace pomocí HTML, CSS, JavaScriptu a dalších webových technologií.',
         portfolioHeading: 'Můj portfoli',
@@ -44,8 +22,8 @@ function updateLanguage(language) {
         project3Heading: 'Projekt 3',
         project3Description: 'Pellentesque rutrum, nisl sed sagittis pellentesque, lacus nulla molestie dui, in egestas turpis lacus nec libero. Morbi rutrum ligula eget enim congue, ut vulputate neque posuere.',
         viewProject: 'Zobrazit projekt'
-      },
-      ru: {
+  },
+  ru: {
         heading: 'Привет, я Frontend Developer',
         description: 'Я создаю современные и адаптивные веб-приложения с использованием HTML, CSS, JavaScript и других веб-технологий.',
         portfolioHeading: 'Моё портфолио',
@@ -56,16 +34,22 @@ function updateLanguage(language) {
         project3Heading: 'Проект 3',
         project3Description: 'Pellentesque rutrum, nisl sed sagittis pellentesque, lacus nulla molestie dui, in egestas turpis lacus nec libero. Morbi rutrum ligula eget enim congue, ut vulputate neque posuere.',
         viewProject: 'Посмотреть проект'
-      }      
-  }
+  }      
+};
+// Функция для переключения языка
+function switchLanguage(lang) {
+  // Получаем все элементы, которые нужно переводить
+  const elements = document.querySelectorAll("[data-translate]");
+
+  // Проходимся по каждому элементу
+  elements.forEach(function(element) {
+    // Получаем ключ перевода для этого элемента
+    const key = element.getAttribute("data-translate");
+
+    // Если перевод для этого ключа существует на выбранном языке
+    if (translations[lang][key]) {
+      // Заменяем содержимое элемента на перевод
+      element.textContent = translations[lang][key];
+    }
+  });
 }
-const i18nElements = document.querySelectorAll('[data-i18n]');
-
-// Update the text content of each element based on the current language
-i18nElements.forEach(element => {
-const key = element.dataset.i18n;
-element.textContent = langData[lang][key];
-});
-
-// Update the language selection button text
-document.getElementById('lang-select-btn').textContent = lang.toUpperCase();
