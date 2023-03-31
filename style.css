@@ -108,4 +108,12 @@ body {
   .portfolio__item-link:hover {
     background-color: #666;
   }
-  
+  /* adaptiv */
+
+  @media screen and (max-width: 900px) {
+    .intro_img{
+      display: none;
+    }
+
+  }
+
