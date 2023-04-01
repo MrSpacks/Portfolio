@@ -5,6 +5,13 @@ const langArr = {
     cz: 'Dobrý den, jmenuji se Petukhov Sergey a jsem začínající frontendový vývojář se zkušenostmi v HTML, CSS a trochu v JavaScriptu. Podívejte se na mé portfolio níže.',
   },
 
+  contact:{
+    en: 'Сontact',
+    ru: 'Контакты',
+    cz: 'Kontakty',
+
+  },
+
   heading: {
     en: 'Frontend Developer',
     ru: 'Верстальщик сайтов',
@@ -50,6 +57,11 @@ const langArr = {
     ru: 'Еще более интересная работа с адаптивом под большенство устройств, на малых экранах левое меню становиться выпадающим',
     cz: 'Ještě zajímavější je práce s adaptivními pro většinu zařízení. Na malých obrazovkách se levé menu změní na rozbalovací.',
   },
+  up: {
+    en:'Up',
+    ru:'На верх',
+    cz:'Na horu',
+  }
 };
 
 document
