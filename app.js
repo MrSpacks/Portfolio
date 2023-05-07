@@ -39,6 +39,11 @@ const langArr = {
     ru: 'Посмотреть работу',
     cz: 'Zobrazení projektu',
   },
+  link4: {
+    en: 'View project',
+    ru: 'Посмотреть работу',
+    cz: 'Zobrazení projektu',
+  },
   
   watch: {
     en: 'My first made-up landing page with simple adaptive',
@@ -61,7 +66,12 @@ const langArr = {
     en:'Up',
     ru:'На верх',
     cz:'Na horu',
-  }
+  },
+  Furniture: {
+    en: 'Example of multipage site layout (without adaptation for gadgets)',
+    ru: 'Пример верстки многостраничного сайта(без адаптированния под гажеты)',
+    cz: 'Příklad rozvržení vícestránkové webové stránky (nepřizpůsobené pro telefony a tablety)',
+  },
 };
 
 document
