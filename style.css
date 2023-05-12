@@ -38,6 +38,7 @@ body {
     box-shadow: 0px 10px 13px -7px #000000, 6px 5px 5px 5px rgba(0,0,0,0);
 
   }
+
   .header_btn button img:first-child{
     background-color: #fff;
   }
@@ -51,6 +52,14 @@ body {
   button img{
     width: 40px;
     height: 30px;
+  }
+  button img:hover{
+    -webkit-box-shadow: -5px 5px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 5px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: -5px 5px 15px 0px rgba(0,0,0,0.75);
+    width: 55px;
+    height: 40px;
+    transition: 0.3s;
   }
 
   /* Main styles */
@@ -75,6 +84,11 @@ body {
     border-radius: 5px;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 6px 5px 5px 5px rgba(0,0,0,0); 
     box-shadow: 0px 10px 13px -7px #000000, 6px 5px 5px 5px rgba(0,0,0,0);
+  }
+  .portfolio__item img:hover{
+    box-shadow: 0px 5px 7px -3px #000000, 3px 2px 2px 2px rgba(0,0,0,0);
+    -webkit-box-shadow: 0px 5px 7px -3px #000000, 3px 2px 2px 2px rgba(0,0,0,0); 
+    transition: 0.3s;
   }
   .intro__description {
     font-size: 25px;
@@ -134,9 +148,9 @@ body {
     touch-action: manipulation;
     text-decoration: none;
   }
-  
   .portfolio__item-link:hover {
-    background-color: #666;
+    background-image: linear-gradient(#7a7f80, #262728);
+    transition: 0.5s;
   }
   .button_up{
     display: inline-flex;
